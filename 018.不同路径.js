@@ -7,7 +7,6 @@
 // var uniquePaths = function (m, n) {
 //     let count = 0;
 //     function dfs(r, c) {
-//         if (r < 0 || r >= m || c < 0 || c >= n) return
 //         if (r == m - 1 && c == n - 1) {
 //             count++;
 //             return
