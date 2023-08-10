@@ -4,8 +4,7 @@
  */
 var climbStairs = function (n) {
     if (n <= 1) return n;
-    const dp = [];
-    dp[0] = 0;
+    const dp = [0];
     dp[1] = 1;
     dp[2] = 2;
     for (let i = 3; i <= n; i++) {
