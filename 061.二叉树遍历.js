@@ -46,15 +46,37 @@ var postorderTraversal = function (root) {
 
 // 后序遍历(递归)
 var postorderTraversal = function (root) {
-    if (root == null) return []
     const post = [];
     const stack = [root];
-    let cur = null
     while (stack.length) {
-        cur = stack.pop();
-        if (cur.left) 
+        let node = stack.pop();
+        post.push(node.val);
+        node.left && stack.push(node.left);
+        node.right && stack.push(node.right);
     }
+
+    post.reverse()
     return post
+};
+
+// 中序遍历(迭代)
+var inorderTraversal = function (root) {
+    if (root == null) return []
+    const inorder = [];
+    const stack = [];
+    let cur = root
+    while (cur != null || stack.length) {
+        if (cur != null) {
+            stack.push(cur)
+            cur = cur.left
+        }
+        else {
+            cur = stack.pop();
+            inorder.push(cur.val);
+            cur = cur.right
+        }
+    }
+    return inorder
 };
 
 
